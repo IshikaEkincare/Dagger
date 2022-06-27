@@ -3,10 +3,10 @@ package com.example.dagger
 import javax.inject.Inject
 
 class UserRegistrationservice @Inject constructor(private val userRepository: UserRepository,
-private val emailService: EmailService) {
+private val notificationService: NotificationService) {
 
     fun registerUser(email: String, password: String){
         userRepository.saveData(email,password)
-        emailService.sendEmail(email,"jetbrain@gmail.com","Welcome to the jetbrains")
+        notificationService.sendEmail(email,"jetbrain@gmail.com","Welcome to the jetbrains")
     }
 }
